@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/demos/">
+    <Project Path="demos/LogPulse.Domain.Demo/LogPulse.Domain.Demo.csproj" Id="df0473e6-5f66-4d60-953b-de7bc03fd810" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/LogPulse.Api/LogPulse.Api.csproj" Id="135b02cd-a124-41ef-85b7-fa12ede86366" />
+    <Project Path="src/LogPulse.Domain/LogPulse.Domain.csproj" Id="9cec4b77-28b0-4b3a-b377-4fa122189e5a" />
+    <Project Path="src/LogPulse.Parsing/LogPulse.Parsing.csproj" Id="3840f9cf-4dac-41c8-948d-3fbc6fcf7f9b" />
+  </Folder>
+</Solution>

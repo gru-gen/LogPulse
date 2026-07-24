@@ -1,0 +1,26 @@
+@host = http://localhost:5000
+
+### Health — liveness probe.
+GET {{host}}/api/health
+
+### Ingest — plain text, one log line per text line.
+POST {{host}}/api/logs?service=checkout
+Content-Type: text/plain
+
+2026-07-17T12:00:01Z ERROR disk full on /var/lib/data
+[warn] slow response from payment gateway
+user 4711 clicked the big red button
+
+### Ingest — blank lines are skipped, not rejected.
+POST {{host}}/api/logs?service=checkout
+Content-Type: text/plain
+
+FATAL replication lag 45s exceeds limit
+
+INFO all pods green again
+
+### Recent errors — the read side. Level >= Error, inside the last N minutes.
+GET {{host}}/api/logs/recent-errors?minutes=15&take=20
+
+### Recent errors — filtered by service (case-insensitive match).
+GET {{host}}/api/logs/recent-errors?minutes=15&service=CHECKOUT
